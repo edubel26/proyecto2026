@@ -1,0 +1,1 @@
+Contiene la actividad de formularios,  donde se encuentra index.html el cual es la aparte de inicio donde se encuentra unas img ciclas según el tipo de cicla luego dos más donde se encuentra uno de registro de usuario sencillo y uno de inicio de sesión faltando los CRUD 
