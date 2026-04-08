@@ -1,13 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link href="./css/styleNewProduct.min.css" rel="stylesheet">
+  </head>
 <body>
 
-  <h1>Aquí va la tabla para ingresar los accesorios manuel</h1>
-  
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MJBE Bikes</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Inicio
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h1>Creción de Producto</h1>
+
+<section class="contenedor-columnas">
+
+  <div class="column-one">
+      <label for="formFile" class="form-label mt-4">Imagen del producto</label>
+      <input class="form-control" type="file" id="formFile">
+
+      <label class="col-form-label mt-4" for="inputDefault">Nombre del Producto</label>
+      <input type="text" class="form-control" placeholder="Inserte el nombre del producto" id="inputDefault">
+
+      <label for="exampleTextarea" class="form-label mt-4">Descripción</label>
+        <textarea class="form-control" placeholder="Inserte la descripcion del producto" id="exampleTextarea" rows="3"></textarea>
+
+        <label class="col-form-label mt-4" for="inputDefault">Color del Producto</label>
+      <input type="text" class="form-control" placeholder="Inserte el color del producto" id="inputDefault">
+
+      <label class="col-form-label mt-4" for="inputDefault">Marca del Producto</label>
+      <input type="text" class="form-control" placeholder="Inserte el marca del producto" id="inputDefault">
+
+      <label class="col-form-label mt-4" for="inputDefault">Cantidad del Producto</label>
+      <input type="number" class="form-control" placeholder="Inserte el cantidad del producto" id="inputDefault">
+
+  </div>
+
+  <div class="column-two">
+
+    <label class="col-form-label mt-4" for="inputDefault">Modelo del Producto</label>
+    <input type="text" class="form-control" placeholder="Inserte el modelo del producto" id="inputDefault">
+    
+    <label for="exampleSelect1" class="form-label mt-4">Medidas</label>
+      <select class="form-select" id="exampleSelect1">
+        <option>Tallaje</option>
+        <option>Milimetros</option>
+        <option>Dientes</option>
+        <option>Diametro</option>
+      </select>
+
+      <label for="exampleSelect1" class="form-label mt-4">Proveedor</label>
+      <select class="form-select" id="exampleSelect1">
+        <option>Empresa nn</option>
+        <option>Señor x</option>
+        <option>Distrib Partes</option>
+      </select>
+
+      <label for="exampleSelect1" class="form-label mt-4">Local</label>
+      <select class="form-select" id="exampleSelect1">
+        <option>Local 1</option>
+        <option>Local 2</option>
+        <option>Local 3</option>
+      </select>
+
+      <label class="form-label mt-4">Valor Unitario</label>
+      <div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">$</span>
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+          <span class="input-group-text">.00</span>
+        </div>
+      </div>
+
+  </div>
+
+</section>
+
+<section class="buttoms">
+    <button type="button" class="btn btn-outline-success">Guardar</button>
+    <button type="button" class="btn btn-outline-danger">Cancelar</button>
+</section>
+
+<footer>
+  <p>Prueba página</p>
+</footer>
+
+  <script src="./css/styleNewProduct.min.css" ></script>
 </body>
 </html>
