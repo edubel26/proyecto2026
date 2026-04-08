@@ -1,11 +1,410 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Empleados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+        h2 {
+            color: #495057;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        fieldset {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        legend {
+            width: auto;
+            padding: 0 10px;
+            font-weight: 600;
+            color: #333;
+        }
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            margin-top: 15px;
+            display: block;
+        }
+        .form-label:first-of-type {
+            margin-top: 0;
+        }
+        .form-control, .form-select {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 8px 12px;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #80bdff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        .form-check {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .form-check-label {
+            margin-left: 5px;
+        }
+        .btn {
+            border-radius: 5px;
+            padding: 8px 20px;
+            font-weight: 600;
+            margin-top: 15px;
+            margin-right: 10px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            background-color: #545b62;
+            border-color: #545b62;
+        }
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+            padding: 5px 10px;
+            font-size: 0.875rem;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #218838;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            padding: 5px 10px;
+            font-size: 0.875rem;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #c82333;
+        }
+        .table {
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        .table thead {
+            background-color: #007bff;
+            color: white;
+        }
+        .table th {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            font-weight: 600;
+        }
+        .table td {
+            border: 1px solid #dee2e6;
+            padding: 10px 12px;
+        }
+        .table tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+        .alert {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            padding: 12px 20px;
+            display: none;
+        }
+        .alert.show {
+            display: block;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .form-text {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.875rem;
+            color: #6c757d;
+        }
+        .text-muted {
+            color: #6c757d;
+        }
+    </style>
 </head>
 <body>
-  <h1>Aquí va la tabla para ingresar los empleados jhair</h1>
+    <div class="container mt-4">
+        <h1>Sistema de Gestión de Empleados</h1>
+
+        <div id="mensaje" class="alert"></div>
+
+        <form id="formularioEmpleado">
+            <fieldset>
+                <legend>Agregar Nuevo Empleado</legend>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="nombre" class="form-label">Nombre Completo *</label>
+                        <input type="text" class="form-control" id="nombre" required placeholder="Ej: Juan Pérez">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" class="form-control" id="email" required placeholder="Ej: juan@example.com">
+                        <small class="form-text text-muted">Nunca compartiremos tu email con nadie más.</small>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="telefono" class="form-label">Teléfono *</label>
+                        <input type="tel" class="form-control" id="telefono" required placeholder="Ej: 123456789">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="departamento" class="form-label">Departamento *</label>
+                        <select class="form-select" id="departamento" required>
+                            <option value="">-- Seleccionar --</option>
+                            <option value="Ventas">Ventas</option>
+                            <option value="IT">IT</option>
+                            <option value="Recursos Humanos">Recursos Humanos</option>
+                            <option value="Finanzas">Finanzas</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Operaciones">Operaciones</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="puesto" class="form-label">Puesto *</label>
+                        <input type="text" class="form-control" id="puesto" required placeholder="Ej: Desarrollador Senior">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="salario" class="form-label">Salario *</label>
+                        <input type="number" class="form-control" id="salario" required placeholder="Ej: 50000" min="0" step="0.01">
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary" id="btnAgregar">Agregar Empleado</button>
+                    <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <h2>Lista de Empleados</h2>
+        <div class="table-responsive">
+            <table class="table table-hover" id="tablaEmpleados">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Departamento</th>
+                        <th>Puesto</th>
+                        <th>Salario</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+                    <tr>
+                        <td colspan="7" class="text-center text-muted">No hay empleados registrados</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let empleados = [];
+        let editandoId = null;
+
+        function cargarEmpleados() {
+            const datos = localStorage.getItem('empleados');
+            if (datos) {
+                empleados = JSON.parse(datos);
+                actualizarTabla();
+            }
+        }
+
+        function guardarEmpleados() {
+            localStorage.setItem('empleados', JSON.stringify(empleados));
+        }
+
+        function mostrarMensaje(texto, tipo) {
+            const mensajeDiv = document.getElementById('mensaje');
+            mensajeDiv.textContent = texto;
+            mensajeDiv.className = `alert alert-${tipo === 'exito' ? 'success' : 'danger'} show`;
+            setTimeout(() => {
+                mensajeDiv.className = 'alert';
+            }, 3000);
+        }
+
+        function validarEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        function validarTelefono(telefono) {
+            const regex = /^\d+$/;
+            return regex.test(telefono);
+        }
+
+        function agregarEmpleado(evento) {
+            evento.preventDefault();
+
+            const nombre = document.getElementById('nombre').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const departamento = document.getElementById('departamento').value;
+            const puesto = document.getElementById('puesto').value.trim();
+            const salario = parseFloat(document.getElementById('salario').value);
+
+            if (!nombre || !email || !telefono || !departamento || !puesto || !salario) {
+                mostrarMensaje('Por favor, completa todos los campos', 'error');
+                return;
+            }
+
+            if (!validarEmail(email)) {
+                mostrarMensaje('Por favor, ingresa un email válido', 'error');
+                return;
+            }
+
+            if (!validarTelefono(telefono)) {
+                mostrarMensaje('El teléfono debe contener solo números', 'error');
+                return;
+            }
+
+            if (salario < 0) {
+                mostrarMensaje('El salario no puede ser negativo', 'error');
+                return;
+            }
+
+            if (editandoId !== null) {
+                const empleado = empleados.find(e => e.id === editandoId);
+                if (empleado) {
+                    empleado.nombre = nombre;
+                    empleado.email = email;
+                    empleado.telefono = telefono;
+                    empleado.departamento = departamento;
+                    empleado.puesto = puesto;
+                    empleado.salario = salario;
+                    mostrarMensaje('Empleado actualizado correctamente', 'exito');
+                    editandoId = null;
+                }
+            } else {
+                const nuevoEmpleado = {
+                    id: Date.now(),
+                    nombre,
+                    email,
+                    telefono,
+                    departamento,
+                    puesto,
+                    salario
+                };
+                empleados.push(nuevoEmpleado);
+                mostrarMensaje('Empleado agregado correctamente', 'exito');
+            }
+
+            guardarEmpleados();
+            actualizarTabla();
+            document.getElementById('formularioEmpleado').reset();
+            cambiarBotonAgregar();
+        }
+
+        function actualizarTabla() {
+            const cuerpoTabla = document.getElementById('cuerpoTabla');
+
+            if (empleados.length === 0) {
+                cuerpoTabla.innerHTML = '<tr><td colspan="7" class="text-center text-muted">No hay empleados registrados</td></tr>';
+                return;
+            }
+
+            cuerpoTabla.innerHTML = empleados.map(emp => `
+                <tr>
+                    <td>${emp.nombre}</td>
+                    <td>${emp.email}</td>
+                    <td>${emp.telefono}</td>
+                    <td>${emp.departamento}</td>
+                    <td>${emp.puesto}</td>
+                    <td>$${parseFloat(emp.salario).toLocaleString('es-CO', {minimumFractionDigits: 2})}</td>
+                    <td>
+                        <button class="btn btn-success btn-sm" onclick="editarEmpleado(${emp.id})">Editar</button>
+                        <button class="btn btn-danger btn-sm" onclick="eliminarEmpleado(${emp.id})">Eliminar</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function editarEmpleado(id) {
+            const empleado = empleados.find(e => e.id === id);
+            if (empleado) {
+                document.getElementById('nombre').value = empleado.nombre;
+                document.getElementById('email').value = empleado.email;
+                document.getElementById('telefono').value = empleado.telefono;
+                document.getElementById('departamento').value = empleado.departamento;
+                document.getElementById('puesto').value = empleado.puesto;
+                document.getElementById('salario').value = empleado.salario;
+
+                editandoId = id;
+                cambiarBotonAgregar();
+                document.querySelector('fieldset').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function cambiarBotonAgregar() {
+            const boton = document.getElementById('btnAgregar');
+            if (editandoId !== null) {
+                boton.textContent = 'Actualizar Empleado';
+            } else {
+                boton.textContent = 'Agregar Empleado';
+            }
+        }
+
+        function eliminarEmpleado(id) {
+            if (confirm('¿Estás seguro de que deseas eliminar este empleado?')) {
+                empleados = empleados.filter(e => e.id !== id);
+                guardarEmpleados();
+                actualizarTabla();
+                mostrarMensaje('Empleado eliminado correctamente', 'exito');
+                if (editandoId === id) {
+                    editandoId = null;
+                    cambiarBotonAgregar();
+                }
+            }
+        }
+
+        document.getElementById('formularioEmpleado').addEventListener('submit', agregarEmpleado);
+
+        window.addEventListener('load', cargarEmpleados);
+    </script>
 </body>
 </html>
