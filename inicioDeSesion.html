@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es-Co">
   <head>
     <meta charset="utf-8" />
     <title>Contact Form</title>
@@ -13,23 +13,24 @@
     <!-- header -->
     <headers-nav> </headers-nav>
 
-    <main class="contenedor">
-      <div class="form-container">
-        <form class="">
+    <main> 
+    <div class="container">
+        <form class="formulario">
           <h2>Inicio de sesión</h2>
-          <label for="name"
-            >Name : <input type="text" id="name" name="name"
-          /></label>
-
-          <label for="email"
-            >email : <input type="email" id="email" name="email"
-          /></label>
-
-          <label for="password"
-            >Password : <input type="password" id="password" name="password"
-          /></label>
-
-          <button type="submit"><a href="index.html">Submit</a></button>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary"><a href="nuevoEmpleado.html">Submit</a></button>
         </form>
       </div>
     </main>
