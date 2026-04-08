@@ -1,91 +1,31 @@
-* {
-  box-sizing: border-box; /* hace que el tamaño de los elementos sean independientes de la ventana */
+main{
+  margin: auto;
 }
 
-body {
-  margin: 0; /* elimina los márgenes por defecto */
-  font-family: sans-serif; /* establece la fuente por defecto */
-  background: #58abff; /* establece el color de fondo del sitio */
+.contenedor-main{
+  padding-top: 50px;
 }
 
-.header {
-  text-align: center; /* alinea el texto horizontalmente */
-  text-transform: uppercase;  /* transforma el texto a mayúsculas */
-  padding: 32px; /* establece el espacio entre el texto y el borde */
-  background-color: #2f2ff8; /* establece el color de fondo del texto */
-  color: #fff;   /* establece el color del texto */
-  border-bottom: 4px solid #1c1aa0;   /* establece el color de la línea horizontal */
-  margin-bottom: 50px;
-  
-
-  display: flex;
-  justify-content: space-between; /* 👈 separa extremos */
-  align-items: center; /* 👈 alinea verticalmente */
+h2{
+  padding: 30px;
+}
 
 
+img {
+ width: 250px;
+ height: 250px;
+  padding: 30px ;
+
+}
+
+
+header{
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
 
-  
-  z-index: 1000;
-
-  height: 80px;
+    z-index: 1000;
 }
-
-.main{
-  margin-top: 100px;
-  width: 100%;
-}
-
-a{
-  text-decoration: none; /* elimina el subrayado de los enlaces */
-  color: #fff; /* establece el color de los enlaces */
-}
-
-ul{
-  list-style-type: none; /* elimina la marca de lista */
-  
-
-  display: flex; /* 👈 pone la lista en línea */
-  gap: 15px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.gallery h2{
-  text-align: center; /* alinea el texto horizontalmente */
-  text-transform: uppercase;  /* transforma el texto a mayúsculas */
-  margin: 0 auto;
-}
-
-
-.gallery{
-  margin: 50px;
-  display: flex; /* crea un contenedor flexible */
-  flex-direction: column; /* establece la dirección de los elementos en una columna */
-   margin: 0 auto;
-}
-
-.gallery-item{
-  display: grid; /* crea una grilla de elementos */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* establece el número de columnas y el ancho de cada columna */
-  gap: clamp(10px, 2vw, 30px); /* establece el espacio entre los elementos */
-  justify-content: center; /* alinea los elementos verticalmente */
-  align-items: center;  /* alinea los elementos horizontalmente */
-  padding: 30px 20px; /* establece el espacio entre el borde y los elementos */
-  margin: 0 auto; /* centra el contenido en la página */
-  max-width: 1600px; /* establece el ancho máximo del contenido */
-}
-
-.gallery-item img{
-  width: 300px; /* establece el ancho del elemento */
-  height: 250px; /* establece el alto del elemento */
-  object-fit: cover;  /* ajusta la imagen a la proporción de ancho y alto */
-}
-
-
 
 
