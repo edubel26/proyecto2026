@@ -1,42 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
+<!doctype html>
+<html lang="es-Co">
+  <head>
+    <meta charset="utf-8" />
     <title>Contact Form</title>
-    <link rel="stylesheet" href="/css/styles2.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/codigoRepetido/menu.js" defer></script>
-</head>
+    <link rel="stylesheet" href="/css/styles2.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
-<body>
-  
-      <!-- header -->
+    <script src="/js/codigoRepetido/menu.js" defer></script>
+    <script src="/js/codigoRepetido/footer.js"></script>
+  </head>
+
+  <body>
+    <!-- header -->
     <headers-nav> </headers-nav>
 
+    <main class="main-dos"> 
 
-    <main class="contenedor">
-      <div class="form-container">
-          <form>
-              <h2>Registro cliente</h2>
-              <label for="name" >Name : <input type="text" id="name" name="name" /></label>
-              
-              <label for="email" >email : <input type="email" id="email" name="email" /></label>
-          
-              <label for="password" >Password : <input type="password" id="password" name="password" /></label>
-          
+    <form action="inicioDeSesion.html">    
+        <div class="container-registro">
+            <h2 class="registroH2">Registro</h2>   
+            <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
 
-              <label for="passwordConfirmation" >Confirm Password : <input type="password" id="passwordConfirmation" name="passwordConfirmation" /></label>
+            <div class="input-group mb-3">
+            <!-- Se deja en text para una explicacion más rapida. -->
+            <input type="text" class="form-control" placeholder="Correo electrónico" aria-label="Recipient’s username" aria-describedby="basic-addon2">
+            <span class="input-group-text" id="basic-addon2">@example.com</span>
+            </div>
 
-              <button type="submit" ><a href="inicioDeSesion.html">Submit</a></button>
-              
-              <label for="checkPas" ><input type="checkbox" id="checkPas" name="checkPas" />aceptar términos y condiciones </label>
+            <div class="mb-3">
+            <label for="basic-url" class="form-label">Foto de perfil</label>
+            <div class="input-group">
+                <input type="file" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4" accept=".jpg, .jpeg">
+            </div>
+            </div>
 
-              
-          </form>
-      </div>
+            <div class="input-group mb-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Nombres" aria-label="Recipient’s username" aria-describedby="basic-addon2">
+                </div>
+                <div class="form-text" id="basic-addon4">Ejemplo: Jose Pepito.</div>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Recipient’s username" aria-describedby="basic-addon2">
+                </div>
+                <div class="form-text" id="basic-addon4">Ejemplo: Paes Castro.</div>
+            </div>
+
+            <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Contraseña" aria-label="Username">
+            <input type="password" class="form-control" placeholder="Repita la contraseña" aria-label="Server">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+
+        
+    </form>
     </main>
 
-</body>
+    <!-- footer -->
+    <footer-footer> </footer-footer>
 
+  </body>
 </html>
